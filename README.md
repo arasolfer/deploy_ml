@@ -34,9 +34,6 @@ This repository contains a machine learning training pipeline designed for data 
 ```plaintext
 deployment_ml/
 ├── data/                     # Input data folder 
-    ├── external/             # External data 
-    ├── interim/              # Interim data
-    ├── processed/            # Processed data
     ├── raw/                  # raw data
 ├── models/                   # Scaler and trained models folder  
 ├── src/                      # Source code
