@@ -1,5 +1,6 @@
 import sys
 import os
+import joblib
 # agregar raiz del proyecto
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 from src.data.data_loader import load_data
@@ -14,8 +15,12 @@ def main():
     data = load_data(file_path = "data/raw/diabetes.csv")
     
     # procesar los datos
-    processed_data, target = process_data(df=data, 
+    processed_data, target, scaler = process_data(df=data, 
                                         target_column='Outcome')
+    
+    # Guardar el escalador
+    joblib.dump(scaler, "models/scaler.pkl")
+    print("Escalador guardado exitosamente en models/scaler.pkl")
     
     # split de datos en test y train
     X_train, X_test, y_train, y_test = split_data(processed_data, target_column='Outcome')

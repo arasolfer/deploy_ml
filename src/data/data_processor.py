@@ -2,7 +2,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
 import pandas as pd
 
-def process_data(df: pd.DataFrame, target_column:str = None) -> tuple[pd.DataFrame, pd.Series]:
+def process_data(df: pd.DataFrame, target_column:str = None) -> tuple[pd.DataFrame, pd.Series, StandardScaler]:
     """
     Procesa los datos:
     - Imputa valores faltantes y reemplaza valores extremos.
@@ -50,4 +50,4 @@ def process_data(df: pd.DataFrame, target_column:str = None) -> tuple[pd.DataFra
     numeric_cols = ['BloodPressure', 'Glucose', 'SkinThickness', 'Insulin', 'BMI']
     df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
     
-    return df, target
+    return df, target, scaler
