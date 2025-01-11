@@ -31,7 +31,7 @@ This repository contains a machine learning training pipeline designed for data 
 
 
 ## Project Structure
-
+```plaintext
 deployment_ml/
 ├── data/                     # Input data folder 
     ├── external/             # External data 
@@ -53,6 +53,7 @@ deployment_ml/
 ├── pyproject.toml            # Poetry configuration
 ├── poetry.lock               # poetry dependencies
 ├── README.md                 # Project documentation (this file)
+```
 
 ## Requirements
 - Python 3.11 or higher
